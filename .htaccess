@@ -1,0 +1,7 @@
+RewriteEngine on
+ 
+# Yeni bir yönlendirme kuralı ekliyoruz
+RewriteRule ^([0-9a-zA-Z-_]+)$  detay.php?sefurl=$1 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+# Klasörlerin bu durumdan etkilenmemesi için şart ekliyoruz
+RewriteCond $1 !^(css|js|images|inc|assets)
